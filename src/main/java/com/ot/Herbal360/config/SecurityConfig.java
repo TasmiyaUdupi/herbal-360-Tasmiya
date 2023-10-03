@@ -39,16 +39,18 @@ public class SecurityConfig {
 			"/admin/id/{id}", "/admin/getalladmin", "/admin/deleteadmin/{id}", "/admin/updateadmin",
 			"/admin/getadminbyname/{userName}", "/admin/email/{email}", "/admin/phone/{phone}",
 			"/admin/validate/email/{email}/{password}", "/admin/validate/phone/{phone}/{password}", "/admin/otp",
-			"/customer/save",  "/customer/getallcustomer", "/customer/deletecustomer/{id}",
-			"/customer/updatecustomer", "/customer/getcustomerbyname/{customerName}", "/customer/email/{email}",
-			"/customer/phone/{phone}", "/customer/getAllCustomers/{offset}/{pageSize}/{field}",
-			"/admin/getAllAdmins/{offset}/{pageSize}/{field}", "/plan/save", "/plan/id/{id}", "/plan/getallplan",
-			"/plan/deleteplan/{id}", "/plan/updateplan", "/plan/getplanbyname/{name}",
-			"/plan/getAllPlans/{offset}/{pageSize}/{field}", "/product/save", "/product/id/{id}",
-			"/product/getallproduct", "/product/deleteproduct/{id}", "/product/updateproduct",
-			"/product/getproductbyname/{name}","/product/getAllProducts/{offset}/{pageSize}/{field}" };
+			"/customer/save", "/customer/getallcustomer", "/customer/deletecustomer/{id}", "/customer/updatecustomer",
+			"/customer/getcustomerbyname/{customerName}", "/customer/email/{email}", "/customer/phone/{phone}",
+			"/customer/getAllCustomers/{offset}/{pageSize}/{field}", "/admin/getAllAdmins/{offset}/{pageSize}/{field}",
+			"/plan/save", "/plan/id/{id}", "/plan/getallplan", "/plan/deleteplan/{id}", "/plan/updateplan",
+			"/plan/getplanbyname/{name}", "/plan/getAllPlans/{offset}/{pageSize}/{field}", "/product/save",
+			"/product/id/{id}", "/product/getallproduct", "/product/deleteproduct/{id}", "/product/updateproduct",
+			"/product/getproductbyname/{name}", "/product/getAllProducts/{offset}/{pageSize}/{field}",
+			"/planProduct/save", "/planProduct/id/{id}", "/planProduct/getallPlanProduct",
+			"/planProduct/deletePlanProduct/{id}", "/planProduct/updatePlanProduct",
+			"/planProduct/getAllPlanProducts/{offset}/{pageSize}/{field}" };
 
-	private static final String[] ADMIN_WHITELIST = {"/customer/id/{id}"};
+	private static final String[] ADMIN_WHITELIST = { "/customer/id/{id}" };
 
 	@Bean
 	PasswordEncoder passwordEncoder() {
