@@ -2,6 +2,7 @@ package com.ot.Herbal360.controller;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
@@ -26,10 +27,15 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
+
+
+
 @RestController
 @RequestMapping("/admin")
 @CrossOrigin(origins = "*")
 public class AdminController {
+	
+	private static final Logger logger=Logger.getLogger(AdminController.class);
 
 	@Autowired
 	private UserService userService;
@@ -41,6 +47,8 @@ public class AdminController {
 			MediaType.APPLICATION_XML_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE,
 					MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<ResponseStructure<User>> saveAdmin(@RequestBody @Validated User user) {
+		
+		logger.info("recieved request to add user "+user.getUserName());
 		return userService.saveAdmin(user);
 	}
 
